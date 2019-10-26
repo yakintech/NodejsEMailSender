@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+</head>
+<body style="text-align: center;">
+
+    <h1>İletişim Sayfası</h1>
+    <form action="/iletisim" method="POST">
+            <div>
+                    <label>Başlık</label>
+                    <input type="text" id="title" name="title" />
+                </div>
+                <div>
+                    <label>Mesaj</label>
+                    <textarea rows="4" cols="50" id="msg" name="message">
+                    </textarea>
+                </div>
+                <div>
+                    <button type="submit">Gönder</button>
+                </div>
+    </form>
+
+</body>
+</html>
+<script>
+    $(document).on("click","button",function(){
+        var msg = new Object();
+        msg.title = $("#title").val();
+        msg.message = $("#msg").val();
+
+    })
+</script>
