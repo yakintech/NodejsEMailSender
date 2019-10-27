@@ -3,6 +3,7 @@ var app = require('express')();
 var http  = require('http').Server(app);
 var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
+const PORT = process.env.PORT || 5000
 // app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
@@ -54,7 +55,7 @@ var transporter = nodemailer.createTransport({
   }
 
 
-  http.listen(8080, function(){
+  http.listen(PORT, function(){
     console.log('listening on *:3001');
   });
 
